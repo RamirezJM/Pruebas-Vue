@@ -30,7 +30,7 @@ function handleSubmit() {
 <template>
   <form @submit.prevent="handleSubmit">
 
-    <div>
+    <div class="form-group">
       <label>Email</label>
       <input
         data-testid="email"
@@ -39,7 +39,7 @@ function handleSubmit() {
       />
     </div>
 
-    <div>
+    <div class="form-group">
       <label>Password</label>
       <input
         data-testid="password"
@@ -52,6 +52,7 @@ function handleSubmit() {
       v-if="email && !isValidEmail"
       data-testid="error"
       role="alert"
+      class="invalido"
     >
       Email inválido
     </p>
@@ -66,4 +67,32 @@ function handleSubmit() {
 
   </form>
 </template>
+
+<style>
+form{
+  max-width: 500px;
+  margin: 3em auto;
+  padding: 1em;
+  border: solid 1px darkslateblue;
+  border-radius: 5px;
+  background-color: rgb(232, 239, 241);
+}
+
+.form-group{
+  display:flex;
+  flex-direction: column;
+}
+input{
+  margin-bottom: 1em;
+  padding: 0.3em;
+}
+
+button{
+  padding: 0.25em 0.5em;
+}
+
+.invalido{
+  color: red;
+}
+</style>
 

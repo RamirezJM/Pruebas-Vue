@@ -52,8 +52,6 @@ describe('LoginForm', () => {
 
     expect(emitted).toBeTruthy()
 
-    console.log('EVENTO EMITIDO:', emitted)
-
     expect(emitted[0][0]).toEqual({
       email: 'test@mail.com',
       password: '123456'
@@ -70,8 +68,6 @@ describe('LoginForm', () => {
     await wrapper.get('form').trigger('submit.prevent')
 
     const password = wrapper.get('[data-testid="password"]')
-
-    console.log('PASSWORD DESPUES DEL SUBMIT:', password.element.value)
 
     expect(password.element.value).toBe('')
   })
